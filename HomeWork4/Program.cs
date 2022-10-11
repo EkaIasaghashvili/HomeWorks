@@ -6,7 +6,9 @@ namespace HomeWork4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ReadLine();
+            Console.WriteLine("Ekatrine Iasaghashvili");
         }
     }
 }
