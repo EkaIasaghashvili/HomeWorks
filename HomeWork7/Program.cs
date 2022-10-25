@@ -30,7 +30,7 @@ namespace HomeWork7
             //char[] charArray = input.ToCharArray();
 
             //var query = charArray.Distinct().ToList();
-            //if (query.Count==1)
+            //if (query.Count == 1)
             //    Console.WriteLine("Yes");
             //else
             //    Console.WriteLine("NO");
