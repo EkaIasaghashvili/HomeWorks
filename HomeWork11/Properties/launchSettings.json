@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "HomeWork11": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:54067;http://localhost:54068"
+    }
+  }
+}
