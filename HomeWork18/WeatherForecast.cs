@@ -1,6 +1,6 @@
 using System;
 
-namespace HomeWork17.Api
+namespace HomeWork18
 {
     public class WeatherForecast
     {
