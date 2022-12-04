@@ -30,13 +30,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork14", "HomeWork14\Ho
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder17", "NewFolder17", "{81795E84-F3C0-479F-B562-D57C5A6FDFC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork17.Application", "HomeWork17\HomeWork17.Application\HomeWork17.Application.csproj", "{DFCBB2D2-235C-4F44-AEE5-BE0224EF6FCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork17.Application", "HomeWork17\HomeWork17.Application\HomeWork17.Application.csproj", "{DFCBB2D2-235C-4F44-AEE5-BE0224EF6FCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork17.Domain", "HomeWork17\HomeWork17.Domain\HomeWork17.Domain.csproj", "{FA30D081-26B0-4DEE-84AD-7F8FD69FA9B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork17.Domain", "HomeWork17\HomeWork17.Domain\HomeWork17.Domain.csproj", "{FA30D081-26B0-4DEE-84AD-7F8FD69FA9B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork17.Persistence", "HomeWork17\HomeWork17.Persistence\HomeWork17.Persistence.csproj", "{D877554E-BB67-4824-8B73-6D8CAE9AB5A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork17.Persistence", "HomeWork17\HomeWork17.Persistence\HomeWork17.Persistence.csproj", "{D877554E-BB67-4824-8B73-6D8CAE9AB5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork17.Api", "HomeWork17\HomeWork17.Api\HomeWork17.Api.csproj", "{5925A76C-4DA6-4C03-AF91-A145875682DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork17.Api", "HomeWork17\HomeWork17.Api\HomeWork17.Api.csproj", "{5925A76C-4DA6-4C03-AF91-A145875682DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

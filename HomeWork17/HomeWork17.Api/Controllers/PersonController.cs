@@ -1,12 +1,15 @@
 ﻿using HomeWork17.Application.Persons.Contracts;
 using HomeWork17.Domain.Persons;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace HomeWork17.Api.Controllers
 {
-    public class PersonController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class PersonController : ControllerBase
     {
         public readonly IPersonService _personService;
         public PersonController(IPersonService personService)
@@ -14,14 +17,14 @@ namespace HomeWork17.Api.Controllers
             _personService = personService;
         }
 
-        [HttpGet("GetAllPersons")]
+        [Authorize(Roles = "User"), HttpGet("GetAllPersons")]
         public async Task<ActionResult<List<Person>>> GetAllPersons()
         {
             var data = await _personService.GetAllPersons();
             return Ok(data);
         }
 
-        [HttpPost("CreatePersonData")]
+        [Authorize(Roles = "User"), HttpPost("CreatePersonData")]
         public async Task<ActionResult> CreatePersonData([FromBody] Person person)
         {
             var validate = new PersonValidator();
@@ -33,20 +36,20 @@ namespace HomeWork17.Api.Controllers
             await _personService.AddPerson(person);
             return RedirectToAction("GetAllPersons");
         }
-        [HttpGet("GetPersonById/{id}")]
+        [Authorize(Roles = "User"), HttpGet("GetPersonById/{id}")]
         public async Task <ActionResult<Person>> GetPersonById([FromRoute] int id)
         {
             var person = await _personService.GetPersonById(id);
             return Ok(person);
         }
-        [HttpGet("GetPersonBySalary")]
+        [Authorize(Roles = "User"), HttpGet("GetPersonBySalary")]
         public async Task <ActionResult<List<Person>>> GetPersonBySalary([FromQuery] double salary)
         {
             var list = await _personService.FindPerson(x => x.Salary > salary);
             return Ok(list);
         }
 
-        [HttpDelete("Delete/{id}")]
+        [Authorize(Roles = "Admin"), HttpDelete("Delete/{id}")]
         public async Task <ActionResult> DeletePerson([FromRoute] int id)
         {
             await _personService.DeletePerson(id);
@@ -54,7 +57,7 @@ namespace HomeWork17.Api.Controllers
             return Ok(data);
         }
 
-        [HttpPut("Update/{id}")]
+        [Authorize(Roles = "Admin"), HttpPut("Update/{id}")]
         public async Task<ActionResult<List<Person>>> UpdatePerson([FromRoute] int id, Person person)
         {
             await _personService.UpdatePerson(id,person);
