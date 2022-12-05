@@ -18,22 +18,25 @@ namespace HomeWork17.Application.Persons.Contracts
         }
         public async Task AddPerson(Person person)
         {
+            if (person is null)
+                throw new ArgumentNullException(nameof(person));
+
             await _personRepository.AddAsync(person);
         }
 
         public async Task DeletePerson(int id)
         {
-           var person = await _personRepository.GetByIdAsync(id); 
-           await _personRepository.DeleteAsync(person);
+            var person = await _personRepository.GetByIdAsync(id); 
+            if (person != null)
+                await _personRepository.DeleteAsync(person);
         }
 
-        public async Task<IReadOnlyList<Person>> FindPerson(Expression<Func<Person, bool>> predicate)
+        public async Task<List<Person>> FindPerson(Expression<Func<Person, bool>> predicate)
         {
             return await _personRepository.Find(predicate);
         }
-        
 
-        public async Task<IReadOnlyList<Person>> GetAllPersons()
+        public async Task<List<Person>> GetAllPersons()
         {
           return await _personRepository.GetAllAsync(nameof(Address));
         }
