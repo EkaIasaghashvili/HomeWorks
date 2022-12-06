@@ -8,8 +8,8 @@ namespace HomeWork17.Application.Repository
 {
     public interface IRepository<T> where T : BaseEntity
     {
-        Task<IReadOnlyList<T>> GetAllAsync(string relatedProperties = null);
-        Task<IReadOnlyList<T>> Find(Expression<Func<T, bool>> predicate);
+        Task<List<T>> GetAllAsync(string relatedProperties = null);
+        Task<List<T>> Find(Expression<Func<T, bool>> predicate);
         Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);

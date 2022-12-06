@@ -50,7 +50,7 @@ namespace HomeWork17.Api.Controllers
         }
 
         [Authorize(Roles = "Admin"), HttpDelete("Delete/{id}")]
-        public async Task <ActionResult> DeletePerson([FromRoute] int id)
+        public async Task<ActionResult<List<Person>>> DeletePerson([FromRoute] int id)
         {
             await _personService.DeletePerson(id);
             var data = await _personService.GetAllPersons();

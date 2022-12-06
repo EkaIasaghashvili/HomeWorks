@@ -32,12 +32,12 @@ namespace HomeWork17.Persistence.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IReadOnlyList<T>> Find(Expression<Func<T, bool>> predicate)
+        public async Task<List<T>> Find(Expression<Func<T, bool>> predicate)
         {
             return await _dbContext.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync(string relatedProperties = null)
+        public async Task<List<T>> GetAllAsync(string relatedProperties = null)
         {
             IQueryable<T> query = _dbContext.Set<T>();
 

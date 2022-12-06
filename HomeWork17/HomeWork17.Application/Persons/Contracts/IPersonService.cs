@@ -9,8 +9,8 @@ namespace HomeWork17.Application.Persons.Contracts
 {
     public interface IPersonService
     {
-        Task<IReadOnlyList<Person>> GetAllPersons();
-        Task<IReadOnlyList<Person>> FindPerson(Expression<Func<Person, bool>> predicate);
+        Task<List<Person>> GetAllPersons();
+        Task<List<Person>> FindPerson(Expression<Func<Person, bool>> predicate);
         Task<Person> GetPersonById(int id);
         Task AddPerson(Person person);
         Task UpdatePerson(int id,Person person);
